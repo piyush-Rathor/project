@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body id="id">
+    <em>This is em 
+        <p>This is child of</p>
+    </em><br>
+    <em>this is another em tag
+        <span>This is a span</span>
+    </em><br>
+    <hr>
+    <p id="ps" class="ps" >this is a para</p>
+    <p>This is another para</p>
+    <br>
+    <h1>this is H1</h1>
+    <script>
+    var x=document.getElementsByTagName("em")[0];
+    var y=document.getElementsByTagName("p")[0];
+    document.write(x.nodeName+"<br>");
+    document.write(y.nodeValue+"<br>");
+    document.write(x.nodeType+"<br>");
+    console.log(x.nodeName);
+    console.log(y.nodeName);
+    console.log(y.nodeType);
+    var z=document.getElementById("id").firstChild.nextSibling;
+    document.write(z.nodeName+"<br>");
+    var a=document.getElementById("ps");
+    document.write(a.attributes[0].nodeName);
+    </script>
+</body>
+</html>

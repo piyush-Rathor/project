@@ -1,0 +1,37 @@
+<!DOCTYPE html>  <!-- here use in js Inner HTML,outer HTML......-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>7</title>
+</head>
+<body>
+        <h1 id="id">This is a headding</h1>\
+        <h2 id="i">This is h2</h2>
+        <h1 id="io">H#</h1>
+        <p id="p1">This is para</p>
+    <script>
+      var x=document.getElementById("id"); 
+      console.log(x.innerHTML);
+       x.innerHTML="js";
+       console.log(x.innerHTML);
+       var x=document.getElementById("i");
+       console.log(x.innerHTML);
+       x.innerHTML="m";
+       console.log(x.innerHTML);
+       var x=document.getElementById("io");
+       console.log(x.innerHTML);
+       x.innerHTML="<hr>this is js<hr>"; //it changes inner content....whethert in this text comment or something esle
+       console.log(x.innerHTML);
+       console.log(x.innerHTML);
+       // Its time to outer html...
+       var x=document.getElementById("p1");
+       console.log(x.outerHTML);
+       x.outerHTML="<h5>This is h5 y js <h5>";
+        console.log(x.outerHTML);
+
+    
+    </script>
+</body>
+</html>

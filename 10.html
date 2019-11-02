@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>10</title>
+</head>
+<body id="body">
+    <!--Replace child,delete node n clone node-->
+    <div id="div">
+        <ul>Item 1</ul>
+        <ul>item 2</ul>
+        <ul>Item 3</ul>
+        <ul>Item 4</ul>
+    </div>
+    <span id="span">i m s</span>
+    <em id="em">i m em</em>
+    <script>// samaghane ki liye step y step chale....
+    var x=document.getElementById("div");//Axix parent Node
+    var y=x.cloneNode(true); // Create clone with true value
+    x.appendChild(y); //append clone
+    console.log(y);
+    var z=x.cloneNode(false);//create clone with false value
+    console.log(z);
+    x.appendChild(z);// append clone with false value
+    // Now Delete a new node...
+    var w=x.removeChild(x.firstElementChild); // this line delete the node and w stores delted node
+    x.appendChild(w); // this append at last in x 
+    // Replace a node .....in place of another (new or old)node...
+    var i=document.getElementById("div").firstElementChild.nextElementSibling;
+    var new_child=document.createElement("ol");
+    new_child.textContent="TEXT";
+    var r=x.replaceChild(new_child,i);
+    // Now old data replace ................
+    var f=document.getElementById("span");
+    var s=document.getElementById("em");
+    var bodys=document.getElementById("body");
+   var temp= bodys.replaceChild(s,f);
+   body.appendChild(temp);
+    </script>
+</body>
+</html>

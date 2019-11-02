@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is js file</h1>
+    <h2 id="id">Golu is gaadha </h2>
+    <p class="p">This is 1st para</p>
+    <p class="p" id="k">This is 2nd para
+        <div>Hey dude</div>
+        <span>This is span</span>
+        <h3>i m h3</h3>
+        <h3>i m 2nd h3</h3>
+    </p>
+    <em>This is a em tag</em>
+    <em>This is a 2nd em tag</em>
+    <em>This is a 3rd em tag</em>
+    <script>
+    var x=document.getElementById("id");
+    document.write(x+"<br>");
+    var y=document.getElementsByClassName("p");
+    document.write(y+"<br>");
+    var z=document.getElementsByClassName("p").length;
+    document.write(z+"<br>");
+    console.log(x);
+    console.log(y);
+    console.log(z);
+    var i=document.getElementById("k").getElementsByTagName("h3");
+    document.write(i+"<br>");
+    console.log(i);
+    var g=document.getElementsByTagName("em")[0];
+    document.write(g);
+    console.log(g);
+    </script>
+</body>
+</html>

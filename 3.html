@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body id="i">
+    <p id="id" class="class">Uses the p tag</p>
+    <h1>This is a headding</h1>
+    <h1>this is 2ns headding</h1>
+    <em>This is em tag</em><br>
+    <span>THis a span..</span><br>
+    <script>
+    var x=document.getElementById("id");
+    var y=document.getElementsByClassName("class");
+    console.log(x.parentElement);
+    console.log(x.parentNode);
+    console.log(y);
+    var o=document.getElementById("i");
+    document.write(j+"<br>");
+    var q=document.getElementById("i").childNodes;
+    document.write(k);
+    document.write(x.parentElement +"<br>" + y+"<br>");
+    var j=document.getElementById("i").children.length;
+    document.write(j+"<br>");
+    var k=document.getElementById("i").childNodes.length;
+    document.write(k);
+    console.log(j);
+    console.log(k);
+    var p=0,s=0;
+    for(p=0;p<j;p++)
+    {
+        document.write(o.children[p]+"<br>");
+    } 
+    document.write("<br>"+"<br>"+"This is child nodes"+"<br>"+"<br>")
+    for(s=0;s<k;s++)
+    {
+        document.write(q[s]+"<br>");
+    }
+    </script>
+</body>
+</html>
