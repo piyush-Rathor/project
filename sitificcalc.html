@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>Calculater</title>
+</script>
+</head>
+<body>
+<form name="myform" >
+<input type="text" name="display">
+
+<input type="button" name="btn1" value="1" onclick="myclick('1')" >
+<input type="button" name="btn2" value="2" onclick="myclick('2')" >
+<input type="button" name="btn3" value="3" onclick="myclick('3')" >
+<input type="button" name="btn4" value="4" onclick="myclick('4')" >
+<input type="button" name="btn5" value="5" onclick="myclick('5')" >
+<input type="button" name="btn6" value="6" onclick="myclick('6')" >
+<input type="button" name="btn7" value="7" onclick="myclick('7')" >
+<input type="button" name="btn8" value="8" onclick="myclick('8')" >
+<input type="button" name="btn9" value="9" onclick="myclick('9')" >
+<input type="button" name="btn0" value="0" onclick="myclick('0')" >
+<input type="button" name="btn00" value="00" onclick="myclick('00')" >
+<input type="button" name="btn." value="." onclick="myclick('.')" >
+
+<input type="button" name="btnadd" value="+" onclick="myclick('+')">
+<input type="button" name="btnsub" value="-" onclick="myclick('-')">
+<input type="button" name="btnmult" value="*" onclick="myclick('*')">
+<input type="button" name="btndiv" value="/" onclick="myclick('/')">
+
+<input type="button" name="btnequal" value="=" onclick="equal()" >
+<input type="button" name="btnac" value="AC" onclick="ac()" >
+
+<input type="button" name="btnsin" value="sin" onclick="fxsin()" >
+<input type="button" name="btncos" value="cos" onclick="fxcos()">
+<input type="button" name="btntan" value="tan" onclick="fxtan()">
+
+<input type="button" name="btnsqr" value="^2" onclick="fxsqr()">
+<input type="button" name="btnsqrt" value="Root" onclick="fxsqrt()">
+
+<input type="button" name="btnlog" value="log" onclick="fxlog()">
+<input type="button" name="btnex" value="exp" onclick="fxexp()">
+<input type="button" name="btninvrce" value="1/x"  onclick="fxinverce()">
+</form>
+<script>
+function myclick(a)
+{
+	myform.display.value+=a;
+}
+function equal()
+{
+	myform.display.value=eval(myform.display.value) ;
+}
+function ac()
+{
+	myform.display.value=0;
+}
+function fxsin()
+{
+	myform.display.value=Math.sin(myform.display.value);
+}
+function fxcos()
+{
+	myform.display.value=Math.cos(myform.display.value);
+}
+function fxtan()
+{
+	myform.display.value=Math.tan(myform.display.value);
+}
+function fxsqr()
+{
+	myform.display.value=Math.pow(myform.display.value,2);
+}
+function fxsqrt()
+{
+	myform.display.value=Math.pow(myform.display.value,1/2);
+}
+function fxlog()
+{
+	myform.display.value=Math.log(myform.display.value);
+}
+function fxexp()
+{
+	myform.display.value=Math.pow(2.73,myform.display.value);
+}
+function fxinverce()
+{
+	myform.display.value=Math.pow(myform.display.value,-1);
+	
+}
+
+
+
+</script>
+</body>
+</html>
