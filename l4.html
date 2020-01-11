@@ -1,0 +1,172 @@
+<html>
+<head>
+<title>Create Your Account</title>
+<link rel="stylesheet" type="text/css" href="c4.css" />
+</head>
+<body>
+<!--<marquee >Fill Your Details in Capital Letter,s</marquee>-->
+<img src="D:\college_lobo.png" id="y"/><br><br/>
+<form name="myform" id="x" onsubmit="return validatedata()" method="POST">
+  <div>
+User Name:<input type="text" class="o" placeholder="Name" name="Name" id="user"><br>
+<span id="username" style="font-family: bolt; font-size: 20px; Color: red;"></span>
+  </div>
+  <div id="year">
+Year <input type="radio" name="k" class="year" >1st Year&nbsp;&nbsp; 
+     <input type="radio" name="k" class="year">2nd Year &nbsp;&nbsp;
+     <input type="radio" name="k" class="year">3rd Year &nbsp;&nbsp;
+     <input type="radio" name="k" class="year">Final Year <br>
+     <span id="year1" style="font-family: bolt; font-size: 20px; Color: red;"></span>
+
+</div>
+Branch <input type="radio" name="i" class="branch1">C.S.E.
+       <input type="radio" name="i" class="branch1">C.E.
+       <input type="radio" name="i" class="branch1">E.C.E.
+       <input type="radio" name="i" class="branch1">E.E.<br>
+       <span id="branch" style="font-family: bolt; font-size: 20px; Color: red;"></span>
+
+Roll Number <input type="number" class="o" placeholder="Roll Number" id="roll"><br>
+<span id="rollnum1" style="font-family: bolt; font-size: 20px; Color: red;"></span>
+<span id="rollnum" style="font-family: bolt; font-size: 20px; Color: red;"></span>
+
+Date of Birth <input type="date" id="date" min="2003-01-02" max="1990-01-01"><br>
+<span id="dateof" style="font-family: bolt; font-size: 20px; Color: red;"></span>
+
+Gender <input type="radio" name="r" class="g"> Male
+       <input type="radio" name="r" class="g"> Female<br>
+       <span id="gen" style="font-family: bolt; font-size: 20px; Color: red;"></span>
+
+Email Address <input type="email" class="o" placeholder="Email" id="mail"><br>
+<span id="email" style="font-family: bolt; font-size: 20px; Color: red;"></span>
+<!--Select Url <input type="url" class="o">This is just for implimantation<br>-->
+<!--select your fav color <input type="color">This is just for implimantation<br>-->
+Address <textarea placeholder="Address" id="add"></textarea><br>
+<span id="address" style="font-family: bolt; font-size: 20px; Color: red;"></span>
+
+Make Your Password <input type="password" class="o" placeholder="Enter Password" id="pass"><br>
+<span id="password" style="font-family: bolt; font-size: 20px; Color: red;"></span>
+
+Conform Password <input type="password" class="o" placeholder="Conform Password" id="cnf"><br>
+<span id="cnfpassword" style="font-family: bolt; font-size: 20px; Color: red;" id="cnfpass"></span>
+
+<a href="server.php"><input type="submit" value="REGISTER" name="submit"></a>
+<input type="reset" >
+</form>
+<script >
+function validatedata()
+{
+    var user =document.getElementById('user').value;
+    var a=document.getElementsByClassName("year");
+    var b=document.getElementsByClassName("branch1");
+    var roll =document.getElementById('roll').value;
+    var date =document.getElementById('date').value;
+    var c=document.getElementsByClassName("g");
+    var add =document.getElementById('add').value;
+    var pass =document.getElementById('pass').value;
+    var cnf =document.getElementById('cnf').value;
+    var year =document.getElementById('year').value;
+    var mail =document.getElementById('mail').value;
+
+    if(user=="")
+    {
+      document.getElementById('username').innerHTML="** Please fill the Username**"+"<br>";
+      return false;
+    }
+    if(user.length <= 2 || user.length>= 20)
+    {
+      document.getElementById('username').innerHTML="** Please fill the name in between 3 to 20 Characters**"+"<br>";
+      return false;
+    }
+    if(!isNaN(user)){
+      document.getElementById('username').innerHTML="** Please fill Your Name **Note a Number**"+"<br>";
+      return false;
+    }
+    if(!(a[0].checked || a[1].checked || a[2].checked || a[3].checked))
+    {
+      document.getElementById('year1').innerHTML="** Please mark Your year**"+"<br>";
+      return false;
+
+    }
+    if(!(b[0].checked || b[1].checked || b[2].checked || b[3].checked))
+    {
+      document.getElementById('branch').innerHTML="** Please mark Your Branch**"+"<br>";
+      return false;
+
+    }
+    if(roll=="")
+    {
+      document.getElementById('rollnum').innerHTML="** Please fill the rollnumber of AKTU**"+"<br>";
+      return false;
+    }
+    if(a[0].checked && roll.length!=13)
+    {
+      document.getElementById('rollnum1').innerHTML="** If you are from 1st Year than your roll will consist 13 digits* **"+"<br>";
+      return false;
+    }
+    if(!(roll.length== 10 || roll.length==13))
+    {
+      document.getElementById('rollnum').innerHTML="** Please fill Your Roll Number *Your roll number have 10 digits* **"+"<br>";
+      return false;
+    }
+    if(isNaN(roll)){
+      document.getElementById('username').innerHTML="** Please fill Your Roll Number "+"<br>";
+      return false;
+    }
+    if(date=="")
+    {
+      document.getElementById('dateof').innerHTML="** Please fill the Date of birth mm/dd/yyyy**"+"<br>";
+      return false;
+    }
+    if(!(c[0].checked || c[1].checked))
+    {
+      document.getElementById('gen').innerHTML="** Please Mark your Gender**"+"<br>";
+      return false;
+
+    }
+
+    if(mail=="")
+    {
+      document.getElementById('email').innerHTML="** Please fill the email**"+"<br>";
+      return false;
+    }
+    if(add=="")
+    {
+      document.getElementById('address').innerHTML="** Please fill the Address**"+"<br>";
+      return false;
+    }
+    if(pass=="")
+    {
+      document.getElementById('password').innerHTML="** Please fill the Passsword**"+"<br>";
+      return false;
+    }
+    if(pass.length<=5 || pass.length>=15)
+    {
+      document.getElementById('password').innerHTML="** Please make Your Password in between 5 to 15 Characters**"+"<br>";
+      return false;
+    }
+    if(cnf=="")
+    {
+      document.getElementById('cnfpassword').innerHTML="** Please Confirm Your Password**"+"<br>";
+      return false;
+    }
+    if(cnf.length<=5 || cnf.length>=15)
+    {
+      document.getElementById('cnfpassword').innerHTML="** Please make Your Password in between 5 to 15 Characters**"+"<br>";
+      return false;
+    }
+    if(pass != cnf)
+    {
+      document.getElementById('cnfpassword').innerHTML="** Both passwords are not match**"+"<br>";
+      return false;
+    }
+    if(mail=="")
+    {
+      document.getElementById('email').innerHTML="** Please fill the Username**"+"<br>";
+      return false;
+    }
+}
+</script>
+</body>
+</html>
+
+

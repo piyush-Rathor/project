@@ -1,0 +1,26 @@
+body
+{
+	font-size:34px;
+}
+caption
+{
+	color:rgb(0,0,100);
+}
+marquee
+{
+	color:black;
+	font-weight:bolt;
+}
+form
+{
+	line-height:1.52;
+}
+.o
+{
+width:100px;
+height:27px;
+}
+#x
+{
+	background-color: #e6fff2;
+}
