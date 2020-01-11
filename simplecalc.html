@@ -1,0 +1,67 @@
+<html>
+<head>
+<style type="text/css">
+.bu
+{
+background-color:blue;
+width:70px;
+line-height:2;
+}
+fieldset
+{
+background-color:red;
+width:300px;
+height:500px;
+}
+input
+{
+width:250px;
+height:50px;
+}
+#id
+{
+width:200px;
+background-color:pink;
+}
+#id2
+{
+background-color:silver;
+}
+.au
+{
+width:70px;
+background-color:silver;
+}
+body
+{
+background-image:url('f5.jpg');
+}
+</style>
+</head>
+<body><br><br><br>
+<fieldset width="20%">
+<form  align="center"; class="h2"  name="form"  >
+<input type="text" name="text"  ><br><br>
+
+<input type="button" class="bu" value="1" onclick="form.text.value += '1' "> &nbsp;
+<input type="button" class="bu" value="2" onclick="form.text.value += '2' "> &nbsp; 
+<input type="button" class="bu" value="3" onclick="form.text.value += '3' "><br><br>
+<input type="button" class="bu" value="4" onclick="form.text.value += '4' "> &nbsp;
+<input type="button" class="bu" value="5" onclick="form.text.value += '5' "> &nbsp;
+<input type="button" class="bu" value="6" onclick="form.text.value += '6' "><br><br>
+<input type="button" class="bu" value="7" onclick="form.text.value += '7' "> &nbsp;
+<input type="button" class="bu" value="8" onclick="form.text.value += '8' "> &nbsp;
+<input type="button" class="bu" value="9" onclick="form.text.value += '9' "><br><br>
+<input type="button" class="au" value="+" onclick="form.text.value += '+' "> &nbsp;
+<input type="button" class="au" value="-" onclick="form.text.value += '-' "> &nbsp;
+<input type="button" class="au" value="*" onclick="form.text.value += '*' "><br><br>
+<input type="button" class="au" value="/" onclick="form.text.value += '/' "> &nbsp;
+<input type="button" class="bu" value="0" onclick="form.text.value += '0' "> &nbsp;
+<input type="button" class="au" value="=" onclick="form.text.value = eval(form.text.value)"><br><br>
+<input type="button" id="id" class="bu" value="clear all" onclick="form.text.value = ''">
+</div>
+</form>
+</fieldset>
+</div>
+</body>
+</html>
