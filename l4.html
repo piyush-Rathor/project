@@ -5,8 +5,8 @@
 </head>
 <body>
 <!--<marquee >Fill Your Details in Capital Letter,s</marquee>-->
-<img src="D:\college_lobo.png" id="y"/><br><br/>
-<form name="myform" id="x" onsubmit="return validatedata()" method="POST">
+<img src="C:\xampp\htdocs\college_lobo.png" id="y"/><br><br/>
+<form name="myform" id="x" onsubmit="return validatedata()" method="POST" >
   <div>
 User Name:<input type="text" class="o" placeholder="Name" name="Name" id="user"><br>
 <span id="username" style="font-family: bolt; font-size: 20px; Color: red;"></span>
@@ -29,7 +29,7 @@ Roll Number <input type="number" class="o" placeholder="Roll Number" id="roll"><
 <span id="rollnum1" style="font-family: bolt; font-size: 20px; Color: red;"></span>
 <span id="rollnum" style="font-family: bolt; font-size: 20px; Color: red;"></span>
 
-Date of Birth <input type="date" id="date" min="2003-01-02" max="1990-01-01"><br>
+Date of Birth <input type="date" id="date"><br>
 <span id="dateof" style="font-family: bolt; font-size: 20px; Color: red;"></span>
 
 Gender <input type="radio" name="r" class="g"> Male
@@ -53,7 +53,19 @@ Conform Password <input type="password" class="o" placeholder="Conform Password"
 <input type="reset" >
 </form>
 <script >
-function validatedata()
+  var kk =document.getElementById('user');
+    var aa=document.getElementsByClassName("year");
+    var bb=document.getElementsByClassName("branch1");
+    var cc =document.getElementById('roll');
+    var dd =document.getElementById('date');
+    var ee=document.getElementsByClassName("g");
+    var ff =document.getElementById('add');
+    var gg =document.getElementById('pass');
+    var hh =document.getElementById('cnf');
+    var ii =document.getElementById('year');
+    var jj =document.getElementById('mail');
+
+    function validatedata()
 {
     var user =document.getElementById('user').value;
     var a=document.getElementsByClassName("year");
@@ -117,11 +129,15 @@ function validatedata()
       document.getElementById('dateof').innerHTML="** Please fill the Date of birth mm/dd/yyyy**"+"<br>";
       return false;
     }
+    if(a[0].checked && roll.length!=13)
+    {
+      document.getElementById('rollnum1').innerHTML="** If you are from 1st Year than your roll will consist 13 digits* **"+"<br>";
+      return false;
+    }
     if(!(c[0].checked || c[1].checked))
     {
       document.getElementById('gen').innerHTML="** Please Mark your Gender**"+"<br>";
       return false;
-
     }
 
     if(mail=="")
@@ -165,8 +181,181 @@ function validatedata()
       return false;
     }
 }
+function removevalidatedata()
+{
+    var user =document.getElementById('user').value;
+    var a=document.getElementsByClassName("year");
+    var b=document.getElementsByClassName("branch1");
+    var roll =document.getElementById('roll').value;
+    var date =document.getElementById('date').value;
+    var c=document.getElementsByClassName("g");
+    var add =document.getElementById('add').value;
+    var pass =document.getElementById('pass').value;
+    var cnf =document.getElementById('cnf').value;
+    var year =document.getElementById('year').value;
+    var mail =document.getElementById('mail').value;
+
+    if(user!="")
+    {
+      document.getElementById('username').innerHTML="";
+    }
+    if(!(user.length <= 2 || user.length>= 20))
+    {
+      document.getElementById('username').innerHTML="";
+    }
+    if(isNaN(user)){
+      document.getElementById('username').innerHTML="";
+    }
+    if((a[0].focus|| a[1].focus|| a[2].focus|| a[3].focus))
+    {
+      document.getElementById('year1').innerHTML="";
+
+    }
+    if((b[0].focus|| b[1].focus|| b[2].focus|| b[3].focus))
+    {
+      document.getElementById('branch').innerHTML="";
+
+    }
+    if(roll!="")
+    {
+      document.getElementById('rollnum').innerHTML="";
+    }
+    if(!(a[0].focus && roll.length!=13))
+    {
+      document.getElementById('rollnum1').innerHTML="";
+    }
+    if(!(roll.length== 10 || roll.length==13))
+    {
+      document.getElementById('rollnum').innerHTML="";
+    }
+    if(isNaN(roll)){
+      document.getElementById('username').innerHTML="";
+    }
+    if(date!="")
+    {
+      document.getElementById('dateof').innerHTML="";
+    }
+    if((c[0].focus|| c[1].focus))
+    {
+      document.getElementById('gen').innerHTML="";
+
+    }
+
+    if(mail!="")
+    {
+      document.getElementById('email').innerHTML="";
+    }
+    if(add!="")
+    {
+      document.getElementById('address').innerHTML="";
+    }
+    if(pass!="")
+    {
+      document.getElementById('password').innerHTML="";
+    }
+    if(!(pass.length<=5 || pass.length>=15))
+    {
+      document.getElementById('password').innerHTML="";
+    }
+    if(cnf!="")
+    {
+      document.getElementById('cnfpassword').innerHTML="";
+    }
+    if(!(cnf.length<=5 || cnf.length>=15))
+    {
+      document.getElementById('cnfpassword').innerHTML="";
+    }
+    if(pass == cnf)
+    {
+      document.getElementById('cnfpassword').innerHTML="";
+    }
+    if(mail!="")
+    {
+      document.getElementById('email').innerHTML="";
+    }
+}
+kk.addEventListener("focus", removevalidatedata);
+kk.addEventListener("blur", removevalidatedata); 
+kk.addEventListener("blur", validatedata);
+
+/*for (var i=0;i<aa.length;i++)
+{
+  if((aa[i].focus)
+  {
+     aa[i].addEventListener("focus",removevalidatedata);
+  }
+  else
+  aa[i].addEventListener("blur",validatedata);
+}
+for (var i=0;i<bb.length;i++)
+{
+  if((bb[i].focus)
+  {
+     bb[i].addEventListener("focus",removevalidatedata);
+  }
+  else
+  bb[i].addEventListener("blur",validatedata);
+}*/
+aa[0].addEventListener("blur",validatedata);
+aa[0].addEventListener("focus",removevalidatedata );
+
+aa[1].addEventListener("blur",validatedata);
+aa[1].addEventListener("focus",removevalidatedata );
+
+aa[2].addEventListener("blur",validatedata);
+aa[2].addEventListener("focus",removevalidatedata );
+
+aa[3].addEventListener("blur",validatedata);
+aa[3].addEventListener("focus",removevalidatedata );
+
+bb[0].addEventListener("blur",  validatedata);
+bb[0].addEventListener("focus",removevalidatedata );
+
+bb[1].addEventListener("blur",  validatedata);
+bb[1].addEventListener("focus",removevalidatedata );
+
+bb[2].addEventListener("blur",  validatedata);
+bb[2].addEventListener("focus",removevalidatedata );
+
+bb[3].addEventListener("blur",  validatedata);
+bb[3].addEventListener("focus",removevalidatedata );
+
+
+cc.addEventListener("blur",removevalidatedata );
+cc.addEventListener("blur",  validatedata);
+cc.addEventListener("focus",removevalidatedata );
+
+dd.addEventListener("blur",removevalidatedata );
+dd.addEventListener("blur",  validatedata);
+dd.addEventListener("focus",removevalidatedata );
+
+ee[0].addEventListener("blur",  validatedata);
+ee[0].addEventListener("focus",removevalidatedata );
+
+ee[1].addEventListener("blur",  validatedata);
+ee[1].addEventListener("focus",removevalidatedata );
+
+ff.addEventListener("blur",removevalidatedata );
+ff.addEventListener("blur",  validatedata);
+ff.addEventListener("focus",removevalidatedata );
+
+gg.addEventListener("blur",removevalidatedata );
+gg.addEventListener("blur",  validatedata);
+gg.addEventListener("focus",removevalidatedata );
+
+hh.addEventListener("blur",removevalidatedata );
+hh.addEventListener("blur",  validatedata);
+hh.addEventListener("focus",removevalidatedata );
+
+ii.addEventListener("blur",removevalidatedata );
+ii.addEventListener("blur",  validatedata);
+ii.addEventListener("focus",removevalidatedata );
+
+jj.addEventListener("blur",removevalidatedata );
+jj.addEventListener("blur",  validatedata);
+jj.addEventListener("focus",removevalidatedata );
+
+
 </script>
 </body>
 </html>
-
-
